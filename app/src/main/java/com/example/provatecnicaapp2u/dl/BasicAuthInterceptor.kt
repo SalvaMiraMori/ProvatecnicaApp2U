@@ -1,0 +1,16 @@
+package com.example.provatecnicaapp2u.dl
+
+import okhttp3.Credentials
+import okhttp3.Interceptor
+
+
+// Utilitza les credencials passades per autenticar l'accés al webservice especificat
+class BasicAuthInterceptor(username: String, password: String): Interceptor {
+    private var credentials: String = Credentials.basic(username, password)
+
+    override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
+        var request = chain.request()
+        request = request.newBuilder().header("Authorization", credentials).build()
+        return chain.proceed(request)
+    }
+}
