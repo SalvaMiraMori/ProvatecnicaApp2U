@@ -47,7 +47,7 @@ fun PhotographerDetailScreen(navController: NavController, firstName: String, la
         // Mostra la imatge del fotògraf
         AsyncImage(model = image, contentDescription = null, modifier = Modifier.height(200.dp), contentScale = ContentScale.FillWidth)
 
-        // Mostra elels nom i cognoms del fotògraf
+        // Mostra els nom i cognoms del fotògraf
         Row(Modifier.padding(16.dp)){
             Text(text = "$firstName $lastName", fontSize = 25.sp)
             Spacer(Modifier.weight(1f))
